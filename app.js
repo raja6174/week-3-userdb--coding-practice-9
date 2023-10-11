@@ -30,7 +30,7 @@ const initializeDbAndServer = async () => {
 initializeDbAndServer();
 
 //API 1
-app.post("/register/", (request, response) => {
+app.post("/register/", async (request, response) => {
   const { name, username, password, gender, location } = request.body;
   const hashedPassword = await bcrypt.hash(password, 10);
 
